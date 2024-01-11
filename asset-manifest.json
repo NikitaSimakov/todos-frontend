@@ -1,13 +1,31 @@
 {
   "files": {
-    "main.css": "/todos-frontend/static/css/main.f855e6bc.css",
-    "main.js": "/todos-frontend/static/js/main.8eb30895.js",
+    "main.css": "/todos-frontend/static/css/main.c7aa8767.css",
+    "main.js": "/todos-frontend/static/js/main.1698f1c5.js",
+    "static/js/293.a123c173.chunk.js": "/todos-frontend/static/js/293.a123c173.chunk.js",
+    "static/css/762.626eab96.chunk.css": "/todos-frontend/static/css/762.626eab96.chunk.css",
+    "static/js/762.ce7e5f76.chunk.js": "/todos-frontend/static/js/762.ce7e5f76.chunk.js",
+    "static/css/781.62411aa2.chunk.css": "/todos-frontend/static/css/781.62411aa2.chunk.css",
+    "static/js/781.88a9e468.chunk.js": "/todos-frontend/static/js/781.88a9e468.chunk.js",
+    "static/css/90.c94acd3a.chunk.css": "/todos-frontend/static/css/90.c94acd3a.chunk.css",
+    "static/js/90.215046e6.chunk.js": "/todos-frontend/static/js/90.215046e6.chunk.js",
+    "static/js/50.1c490ccf.chunk.js": "/todos-frontend/static/js/50.1c490ccf.chunk.js",
+    "static/js/931.9239a1fb.chunk.js": "/todos-frontend/static/js/931.9239a1fb.chunk.js",
     "index.html": "/todos-frontend/index.html",
-    "main.f855e6bc.css.map": "/todos-frontend/static/css/main.f855e6bc.css.map",
-    "main.8eb30895.js.map": "/todos-frontend/static/js/main.8eb30895.js.map"
+    "main.c7aa8767.css.map": "/todos-frontend/static/css/main.c7aa8767.css.map",
+    "main.1698f1c5.js.map": "/todos-frontend/static/js/main.1698f1c5.js.map",
+    "293.a123c173.chunk.js.map": "/todos-frontend/static/js/293.a123c173.chunk.js.map",
+    "762.626eab96.chunk.css.map": "/todos-frontend/static/css/762.626eab96.chunk.css.map",
+    "762.ce7e5f76.chunk.js.map": "/todos-frontend/static/js/762.ce7e5f76.chunk.js.map",
+    "781.62411aa2.chunk.css.map": "/todos-frontend/static/css/781.62411aa2.chunk.css.map",
+    "781.88a9e468.chunk.js.map": "/todos-frontend/static/js/781.88a9e468.chunk.js.map",
+    "90.c94acd3a.chunk.css.map": "/todos-frontend/static/css/90.c94acd3a.chunk.css.map",
+    "90.215046e6.chunk.js.map": "/todos-frontend/static/js/90.215046e6.chunk.js.map",
+    "50.1c490ccf.chunk.js.map": "/todos-frontend/static/js/50.1c490ccf.chunk.js.map",
+    "931.9239a1fb.chunk.js.map": "/todos-frontend/static/js/931.9239a1fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.8eb30895.js"
+    "static/css/main.c7aa8767.css",
+    "static/js/main.1698f1c5.js"
   ]
 }
