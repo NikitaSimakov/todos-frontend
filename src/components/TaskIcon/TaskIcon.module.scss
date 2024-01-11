@@ -1,0 +1,21 @@
+.buttonBox {
+  display: flex;
+  gap: 15px;
+}
+.button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.pending,
+.progress,
+.done {
+  & svg {
+    stroke: gray;
+  }
+}
+
+.active svg {
+  stroke: green;
+}

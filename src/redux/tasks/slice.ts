@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { logOut } from '../../redux/auth/operations';
-import { fetchTasks, addTask, deleteTask } from './operations';
+import {
+  fetchTasks,
+  addTask,
+  deleteTask,
+  updateStatusTask,
+} from './operations';
 
 type Task = {
   _id: string;
@@ -71,7 +76,17 @@ const tasksSlice = createSlice({
         state.items = [];
         state.error = null;
         state.isLoading = false;
-      });
+      })
+      .addCase(updateStatusTask.pending, handlePending)
+      .addCase(updateStatusTask.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.items.findIndex(
+          item => item._id === action.payload._id
+        );
+        state.items.splice(index, 1, action.payload);
+      })
+      .addCase(updateStatusTask.rejected, handleRejected);
   },
 });
 

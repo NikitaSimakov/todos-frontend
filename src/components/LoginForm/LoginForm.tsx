@@ -15,7 +15,6 @@ export const LoginForm = () => {
     // const el = form.elements as HTMLFormControlsCollection;
     // const email = el[0].value;
     // console.log(el.email.value);
-    console.log(email, password);
     dispatch(
       logIn({
         email,

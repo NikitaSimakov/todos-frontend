@@ -55,3 +55,19 @@ export const deleteTask = createAsyncThunk<
     return thunkAPI.rejectWithValue((e as Error).message);
   }
 });
+
+export const updateStatusTask = createAsyncThunk<
+  Task,
+  { id: string; status: string },
+  { rejectValue: string }
+>('tasks/updateStatus', async (body, thunkAPI) => {
+  try {
+    const response = await axios.patch(`api/todos/${body.id}`, {
+      status: body.status,
+    });
+    console.log(response.data);
+    return response.data;
+  } catch (e) {
+    return thunkAPI.rejectWithValue((e as Error).message);
+  }
+});
