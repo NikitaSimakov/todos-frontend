@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# Todo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Todo App](https://todos-frontend-five.vercel.app/todos-frontend/) создано для
+безопасного управления задачами, используя систему аутентификации для надежного
+хранения информации о пользователях.
 
-## Available Scripts
+## Веб-сервис может находится в состоянии сна, пожалуйста, дайте ему минутку на пробуждение..
 
-In the project directory, you can run:
+## Описание проекта
 
-### `npm start`
+Проект предоставляет мощный функционал для эффективного управления вашими
+задачами. Вам доступны возможности сохранения новых задач, редактирования
+существующих, изменения их статусов и, конечно, удаления.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Что делает этот проект особенно ценным, так это его встроенная интеграция с
+веб-сервером. Ваши задачи надежно сохраняются и доступны вам в любой момент,
+обеспечивая стабильность и надежность в управлении вашим рабочим процессом.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Особенности
 
-### `npm test`
+- **Управление задачами:** Простое добавление, редактирование и удаление задач.
+- **Безопасность с аутентификацией:** Использует аутентификацию для хранения
+  персональных данных пользователей.
+- **Взаимодействие с пользователем:** В отсутствие задач отображается
+  текст-заглушка, призывающий пользователей добавить новые задачи.
+- **Модальное окно для добавления задач:** Добавление задач осуществляется с
+  помощью модального окна, созданным с использованием `createPortal` из
+  библиотеки `react-dom`, что позволяет не волноваться о его перекрытии другим
+  контентом. ![Модальное окно](./public/Modal.png)
+- **Варианты статуса задачи:** Задачи по умолчанию имеют статус "в ожидании",
+  который легко изменить с помощью соответствующих значков на "выполнено" или "в
+  процессе".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Удобство пользователя:** Пользователя информирует лоадер о взаимодействии
+  клиента с веб-сервером. По завершении операции, пользователь получает
+  уведомление о результате, будь то успешное или неудачное добавление задачи.
+  Кнопка "edit" позволяет легко изменить заголовок и описание задачи. При
+  нажатии, поля автоматически заполняются существующей информацией, а процесс
+  аналогичен д обавлению новой задачи. Удаление задачи также реализовано,
+  предоставляя пользователям уверенность в управлении своим списком дел.
+  ![Задачи](./public/Todos.png)
 
-### `npm run build`
+  При обновлении страницы пользователь видит лоадер, а клиентская часть
+  приложения связывается с сервером для проверки валидности JWT токена. В случае
+  валидности токена, пользователь остается авторизованным на странице с
+  задачами. В противном случае, происходит перенаправление на страницу
+  авторизации.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ![Redux store](./public/reduxStore.png) Redux-persist позволяет в течение
+  суток оставаться авторизованным, что избавляет от лишних хлопот.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Используемые технологии
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- TypeScript
+- React
+- Redux
+- Redux Toolkit
 
-### `npm run eject`
+## Установка
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Для установки и запуска проекта выполните следующие шаги:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Клонировать репозиторий
+git clone https://github.com/NikitaSimakov/todos-frontend.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Перейти в директорию проекта
+cd ваш-репозиторий
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Установить зависимости
+npm install
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Запустить приложение в режиме разработки
+npm start
+```

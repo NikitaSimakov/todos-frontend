@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { updateTask } from '../../redux/tasks/operations';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 import Modal from '../Modal/Modal';
 import css from './TaskEditor.module.scss';
 import { useAppDispatch } from '../../redux/hooks';
@@ -24,7 +25,7 @@ export const TaskEditor = ({ id }: { id: string }) => {
       handleClose();
       return;
     }
-    alert('Task cannot be empty. Enter some text!');
+    toast.error('Task or description cannot be empty. Enter some text!');
   };
 
   return (

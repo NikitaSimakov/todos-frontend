@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Modal from '../Modal/Modal';
 import css from './TaskAdd.module.scss';
 import { useAppDispatch } from '../../redux/hooks';
+import { toast } from 'react-hot-toast';
 
 export const TaskAdd = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +23,7 @@ export const TaskAdd = () => {
       handleClose();
       return;
     }
-    alert('Task or description cannot be empty. Enter some text!');
+    toast.error('Task or description cannot be empty. Enter some text!');
   };
 
   return (
