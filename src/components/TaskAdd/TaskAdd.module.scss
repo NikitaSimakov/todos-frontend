@@ -21,17 +21,36 @@
   font: inherit;
   cursor: pointer;
   outline: none;
-  border-radius: 4px;
   padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #3f51b5;
+  color: #fff;
+
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.submitButton {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  padding: 8px 12px;
+  border-radius: 4px;
   background-color: #3f51b5;
   color: #fff;
 }
 
 .button:hover,
-.button:focus {
+.button:focus,
+.submitButton:hover,
+.submitButton:focus {
   background-color: #303f9f;
 }
 
-.button:active {
+.button:active,
+.submitButton:active {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }

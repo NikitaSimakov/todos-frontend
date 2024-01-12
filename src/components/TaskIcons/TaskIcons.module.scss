@@ -1,6 +1,7 @@
 .buttonBox {
   display: flex;
   gap: 15px;
+  margin: 0 80px 0 auto;
 }
 .button {
   border: none;
@@ -13,9 +14,11 @@
 .done {
   & svg {
     stroke: gray;
+    height: 2rem;
+    width: 2rem;
   }
 }
 
 .active svg {
-  stroke: green;
+  stroke: #303f9f;
 }

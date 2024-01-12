@@ -1,28 +1,29 @@
-import { useDispatch } from 'react-redux';
 import { deleteTask } from '../../redux/tasks/operations';
 import css from './Task.module.scss';
-import { AppDispatch } from '../../redux/store';
-import TaskIcon from '../TaskIcon/TaskIcon';
+import TaskIcons from '../TaskIcons/TaskIcons';
+import { TaskEditor } from '../TaskEditor/TaskEditor';
+import { useAppDispatch } from '../../redux/hooks';
 
 export const Task = ({
   id,
-  text,
+  title,
   status,
   description,
 }: {
   id: string;
-  text: string;
+  title: string;
   status: string;
   description: string;
 }) => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const handleDelete = () => dispatch(deleteTask(id));
 
   return (
     <div className={css.wrapper}>
-      <h3 className={css.text}>{text}</h3>
+      <h3 className={css.text}>{title}</h3>
       <p>{description}</p>
-      <TaskIcon status={status} id={id} />
+      <TaskIcons status={status} id={id} />
+      <TaskEditor id={id} />
       <button type="button" className={css.button} onClick={handleDelete}>
         Delete
       </button>

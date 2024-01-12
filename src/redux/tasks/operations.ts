@@ -1,14 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { Task, TaskRequest } from '../../@types/types';
 
-type Task = {
-  _id: string;
-  title: string;
-  description: string;
-  status: 'pending' | 'done' | 'progress';
-};
-
-// GET @ /tasks
 export const fetchTasks = createAsyncThunk<
   Task[],
   undefined,
@@ -22,13 +16,6 @@ export const fetchTasks = createAsyncThunk<
   }
 });
 
-// POST @ /tasks
-type TaskRequest = {
-  title: string;
-  description: string;
-  status: 'pending' | 'done' | 'progress';
-};
-
 export const addTask = createAsyncThunk<
   Task,
   TaskRequest,
@@ -36,13 +23,14 @@ export const addTask = createAsyncThunk<
 >('tasks/addTask', async (taskRequest, thunkAPI) => {
   try {
     const response = await axios.post('api/todos', taskRequest);
+    toast.success('Successful task addition');
     return response.data;
   } catch (e) {
+    toast.error('Fail task addition');
     return thunkAPI.rejectWithValue((e as Error).message);
   }
 });
 
-// DELETE @ /tasks/:id
 export const deleteTask = createAsyncThunk<
   string,
   string,
@@ -50,8 +38,28 @@ export const deleteTask = createAsyncThunk<
 >('tasks/deleteTask', async (taskId, thunkAPI) => {
   try {
     const response = await axios.delete(`api/todos/${taskId}`);
+    toast.success('Successful task delete');
     return response.data;
   } catch (e) {
+    toast.error('Fail task delete');
+    return thunkAPI.rejectWithValue((e as Error).message);
+  }
+});
+
+export const updateTask = createAsyncThunk<
+  Task,
+  { id: string; description: string; title: string },
+  { rejectValue: string }
+>('tasks/updateTask', async (body, thunkAPI) => {
+  try {
+    const response = await axios.put(`api/todos/${body.id}`, {
+      title: body.title,
+      description: body.description,
+    });
+    toast.success('Successful task update');
+    return response.data;
+  } catch (e) {
+    toast.error('Fail task update');
     return thunkAPI.rejectWithValue((e as Error).message);
   }
 });
@@ -65,9 +73,10 @@ export const updateStatusTask = createAsyncThunk<
     const response = await axios.patch(`api/todos/${body.id}`, {
       status: body.status,
     });
-    console.log(response.data);
+    toast.success(`Successful task status update for ${body.status}`);
     return response.data;
   } catch (e) {
+    toast.error('Fail task status update');
     return thunkAPI.rejectWithValue((e as Error).message);
   }
 });

@@ -1,26 +1,14 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-const styles = {
-  container: {
-    minHeight: 'calc(100vh - 50px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontWeight: '500',
-    fontSize: '48',
-    alignText: 'center',
-  },
-};
+import '../index.scss';
 
 export default function Home() {
   return (
     <HelmetProvider>
-      <div style={styles.container}>
+      <div className="home">
         <Helmet>
           <title>Homepage</title>
         </Helmet>
-        <h1 style={styles.title}>
+        <h1 className="homeTitle">
           Task manager welcome page{' '}
           <span role="img" aria-label="Greeting icon">
             💁‍♀️

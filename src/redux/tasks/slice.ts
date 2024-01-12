@@ -5,20 +5,9 @@ import {
   addTask,
   deleteTask,
   updateStatusTask,
+  updateTask,
 } from './operations';
-
-type Task = {
-  _id: string;
-  title: string;
-  description: string;
-  status: 'pending' | 'done' | 'progress';
-};
-
-type TasksState = {
-  items: Task[];
-  isLoading: boolean;
-  error: string | null;
-};
+import { Task, TasksState } from '../../@types/types';
 
 const initialState: TasksState = {
   items: [],
@@ -46,6 +35,10 @@ const tasksSlice = createSlice({
   name: 'tasks',
   reducers: {},
   initialState,
+  selectors: {
+    selectLoading: state => state.isLoading,
+    selectAllTasks: state => state.items,
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchTasks.pending, handlePending)
@@ -77,6 +70,15 @@ const tasksSlice = createSlice({
         state.error = null;
         state.isLoading = false;
       })
+      .addCase(updateTask.pending, handlePending)
+      .addCase(updateTask.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.items.findIndex(
+          item => item._id === action.payload._id
+        );
+        state.items.splice(index, 1, action.payload);
+      })
       .addCase(updateStatusTask.pending, handlePending)
       .addCase(updateStatusTask.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -91,3 +93,4 @@ const tasksSlice = createSlice({
 });
 
 export const tasksReducer = tasksSlice.reducer;
+export const { selectLoading, selectAllTasks } = tasksSlice.selectors;

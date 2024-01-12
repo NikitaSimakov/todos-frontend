@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { TaskList } from '../components/TaskList/TaskList';
-import { TaskEditor } from '../components/TaskEditor/TaskEditor';
+import { TaskAdd } from '../components/TaskAdd/TaskAdd';
 import { fetchTasks } from '../redux/tasks/operations';
-import { selectLoading } from '../redux/tasks/selectors';
-import { AppDispatch } from '../redux/store';
+import Spinner from '../components/Spinner/Spinner';
+import { useAppDispatch } from '../redux/hooks';
+import { selectLoading } from '../redux/tasks/slice';
 
 export default function Tasks() {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const isLoading = useSelector(selectLoading);
 
   useEffect(() => {
@@ -20,9 +21,9 @@ export default function Tasks() {
       <Helmet>
         <title>Your tasks</title>
       </Helmet>
-      <TaskEditor />
-      <div>{isLoading && 'Request in progress...'}</div>
+      {<Spinner isLoading={isLoading} />}
       <TaskList />
+      <TaskAdd />
     </HelmetProvider>
   );
 }

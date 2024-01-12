@@ -10,3 +10,32 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+.layout {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  position: relative;
+}
+
+.home {
+  min-height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &Title {
+    font-weight: 500;
+    font-size: 48px;
+    text-align: center;
+  }
+}
+
+.authPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  height: 100vh;
+  align-content: center;
+}

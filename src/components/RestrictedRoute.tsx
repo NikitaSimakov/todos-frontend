@@ -1,11 +1,5 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks';
-import React from 'react';
-
-/**
- * - If the route is restricted and the user is logged in, render a <Navigate> to redirectTo
- * - Otherwise render the component
- */
 
 type Props = {
   component: JSX.Element;
