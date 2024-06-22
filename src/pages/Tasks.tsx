@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useSelector } from 'react-redux';
+import { Sidebar } from '../components/Sidebar/Sidebar';
 import { TaskList } from '../components/TaskList/TaskList';
-import { TaskAdd } from '../components/TaskAdd/TaskAdd';
 import { fetchTasks } from '../redux/tasks/operations';
 import Spinner from '../components/Spinner/Spinner';
 import { useAppDispatch } from '../redux/hooks';
@@ -21,9 +21,11 @@ export default function Tasks() {
       <Helmet>
         <title>Your tasks</title>
       </Helmet>
-      {<Spinner isLoading={isLoading} />}
-      <TaskList />
-      <TaskAdd />
+      <Spinner isLoading={isLoading} />
+      <main>
+        <Sidebar />
+        <TaskList />
+      </main>
     </HelmetProvider>
   );
 }

@@ -19,14 +19,16 @@ export const Task = ({
   const handleDelete = () => dispatch(deleteTask(id));
 
   return (
-    <div className={css.wrapper}>
+    <>
       <h3 className={css.text}>{title}</h3>
       <p>{description}</p>
       <TaskIcons status={status} id={id} />
-      <TaskEditor id={id} />
-      <button type="button" className={css.button} onClick={handleDelete}>
-        Delete
-      </button>
-    </div>
+      <div className={css.buttonsBoxOperation}>
+        <TaskEditor id={id} />
+        <button type="button" className={css.button} onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
+    </>
   );
 };

@@ -1,6 +1,8 @@
-import { TbDeviceIpadQuestion } from 'react-icons/tb';
-import { TbDeviceIpadUp } from 'react-icons/tb';
-import { TbDeviceIpadStar } from 'react-icons/tb';
+import {
+  TbDeviceTabletPause,
+  TbDeviceTabletCode,
+  TbDeviceTabletCheck,
+} from 'react-icons/tb';
 import { updateStatusTask } from '../../redux/tasks/operations';
 import { useAppDispatch } from '../../redux/hooks';
 import css from './TaskIcons.module.scss';
@@ -11,15 +13,16 @@ type Props = {
 };
 
 const icons = [
-  { iconId: 1, buttonStatus: 'pending', icon: <TbDeviceIpadQuestion /> },
-  { iconId: 2, buttonStatus: 'progress', icon: <TbDeviceIpadUp /> },
-  { iconId: 3, buttonStatus: 'done', icon: <TbDeviceIpadStar /> },
+  { iconId: 1, buttonStatus: 'pending', icon: <TbDeviceTabletPause /> },
+  { iconId: 2, buttonStatus: 'progress', icon: <TbDeviceTabletCode /> },
+  { iconId: 3, buttonStatus: 'done', icon: <TbDeviceTabletCheck /> },
 ];
 
 const TaskIcons = ({ status, id }: Props) => {
   const dispatch = useAppDispatch();
   const markup = icons.map(({ buttonStatus, icon, iconId }) => (
     <button
+      title={buttonStatus}
       disabled={buttonStatus === status}
       onClick={() => dispatch(updateStatusTask({ id, status: buttonStatus }))}
       key={iconId}

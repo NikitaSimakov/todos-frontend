@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Task } from '../Task/Task';
-import css from './TaskList.module.scss';
 import { selectAllTasks, selectLoading } from '../../redux/tasks/slice';
+import css from './TaskList.module.scss';
 
 export const TaskList = () => {
   const tasks = useSelector(selectAllTasks);
@@ -13,7 +13,7 @@ export const TaskList = () => {
       )}
       <ul className={css.list}>
         {tasks.map(({ _id: id, title, status, description }) => (
-          <li key={id}>
+          <li key={id} className={css.item}>
             <Task
               id={id}
               title={title}

@@ -29,7 +29,7 @@ export const TaskAdd = () => {
   return (
     <>
       <button className={css.button} onClick={() => setIsModalOpen(true)}>
-        Add task
+        Add new task
       </button>
       {isModalOpen && (
         <Modal onClose={handleClose}>
