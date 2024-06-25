@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktodos_frontend=self.webpackChunktodos_frontend||[]).push([[293],{293:(e,s,a)=>{a.r(s),a.d(s,{default:()=>r});var n=a(50),l=(a(277),a(184));function r(){return(0,l.jsxs)("div",{className:"home",children:[(0,l.jsx)(n.ql,{title:"Homepage"}),(0,l.jsxs)("h1",{className:"homeTitle",children:["Task manager welcome page"," ",(0,l.jsx)("span",{role:"img","aria-label":"Greeting icon",children:"\ud83d\udc81\u200d\u2640\ufe0f"})]})]})}}}]);
+//# sourceMappingURL=293.a7c7b9ef.chunk.js.map
