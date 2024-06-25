@@ -11,19 +11,22 @@ export const TaskAdd = () => {
   const [description, setDescription] = useState('');
   const dispatch = useAppDispatch();
 
-  const handleClose = () => setIsModalOpen(false);
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleClose = () => {
+    setIsModalOpen(false);
     setTitle('');
     setDescription('');
+  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const form = e.currentTarget;
-    if (title !== '' && description !== '') {
-      dispatch(addTask({ title, description, status: 'pending' }));
-      form.reset();
-      handleClose();
+    if (title === '' || description === '') {
+      toast.error('Task or description cannot be empty. Enter some text!');
       return;
     }
-    toast.error('Task or description cannot be empty. Enter some text!');
+    dispatch(addTask({ title, description, status: 'pending' }));
+    form.reset();
+    handleClose();
+    return;
   };
 
   return (

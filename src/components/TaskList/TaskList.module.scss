@@ -1,9 +1,7 @@
+@import "../../index.scss";
+
 .empty {
-  display: flex;
-  height: 100vh;
-  align-content: center;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include absoluteCenter;
 }
 
 .list {

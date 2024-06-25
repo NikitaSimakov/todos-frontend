@@ -24,7 +24,6 @@ export const Sidebar = () => {
     );
   }
   const counts = getStatusCounts(tasks);
-  console.log(counts);
 
   return (
     <aside className={css.sidebar}>

@@ -8,21 +8,39 @@ export const TaskList = () => {
   const loading = useSelector(selectLoading);
   return (
     <>
-      {!loading && tasks.length === 0 && (
+      {!loading && tasks.length === 0 ? (
         <p className={css.empty}>The task list is empty. Please add tasks..</p>
+      ) : (
+        <ul className={css.list}>
+          {tasks.map(({ _id: id, title, status, description }) => (
+            <li key={id} className={css.item}>
+              <Task
+                id={id}
+                title={title}
+                status={status}
+                description={description}
+              />
+            </li>
+          ))}
+        </ul>
       )}
-      <ul className={css.list}>
-        {tasks.map(({ _id: id, title, status, description }) => (
-          <li key={id} className={css.item}>
-            <Task
-              id={id}
-              title={title}
-              status={status}
-              description={description}
-            />
-          </li>
-        ))}
-      </ul>
     </>
+    // <>
+    //   {!loading && tasks.length === 0 && (
+    //     <p className={css.empty}>The task list is empty. Please add tasks..</p>
+    //   )}
+    //   <ul className={css.list}>
+    //     {tasks.map(({ _id: id, title, status, description }) => (
+    //       <li key={id} className={css.item}>
+    //         <Task
+    //           id={id}
+    //           title={title}
+    //           status={status}
+    //           description={description}
+    //         />
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </>
   );
 };
