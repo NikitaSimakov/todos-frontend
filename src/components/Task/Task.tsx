@@ -3,6 +3,7 @@ import css from './Task.module.scss';
 import TaskIcons from '../TaskIcons/TaskIcons';
 import { TaskEditor } from '../TaskEditor/TaskEditor';
 import { useAppDispatch } from '../../redux/hooks';
+import { useNotification } from '../../components/NotificationContext';
 
 export const Task = ({
   id,
@@ -16,7 +17,15 @@ export const Task = ({
   description: string;
 }) => {
   const dispatch = useAppDispatch();
-  const handleDelete = () => dispatch(deleteTask(id));
+  const { addNotification } = useNotification();
+  const handleDelete = () => {
+    try {
+      dispatch(deleteTask(id));
+      addNotification('Successful task delete');
+    } catch (error) {
+      addNotification('Please try again');
+    }
+  };
 
   return (
     <>

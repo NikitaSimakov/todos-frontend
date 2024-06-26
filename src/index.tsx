@@ -6,7 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { store, persistor } from './redux/store';
 import { NotificationProvider } from './components/NotificationProvider';
-import Notifications from './components/Notification/Notifications';
+// import Notifications from './components/Notification/Notifications';
 import './index.scss';
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -21,7 +21,7 @@ root.render(
           <NotificationProvider>
             <HelmetProvider>
               <App />
-              <Notifications />
+              {/* <Notifications /> */}
             </HelmetProvider>
           </NotificationProvider>
         </BrowserRouter>

@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { Task, TaskRequest } from '../../@types/types';
-import { notify } from '../../hooks/useNotification';
+// import { notify } from '../../hooks/useNotification';
 
 export const fetchTasks = createAsyncThunk<
   Task[],
@@ -39,7 +39,7 @@ export const deleteTask = createAsyncThunk<
 >('tasks/deleteTask', async (taskId, thunkAPI) => {
   try {
     const response = await axios.delete(`api/todos/${taskId}`);
-    notify('Successful task delete');
+    // notify('Successful task delete');
     // toast.success('Successful task delete');
     return response.data;
   } catch (e) {

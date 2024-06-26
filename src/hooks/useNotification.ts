@@ -27,8 +27,8 @@ export const useNotification = (): NotificationContextType => {
 
 let globalNotify: (message: string) => void;
 
-export const setNotifyFunc = (notifyFunc: (message: string) => void) => {
-  globalNotify = notifyFunc;
+export const setNotifyFunc = (callback: (message: string) => void) => {
+  globalNotify = callback;
 };
 
 export const notify = (message: string) => {
