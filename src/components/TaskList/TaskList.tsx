@@ -14,7 +14,7 @@ export const TaskList = () => {
           {tasks.map(({ _id: id, title, status, description }) => (
             <li key={id} className={css.item}>
               <Task
-                id={id}
+                _id={id}
                 title={title}
                 status={status}
                 description={description}

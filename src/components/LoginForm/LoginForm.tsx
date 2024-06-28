@@ -32,6 +32,7 @@ export const LoginForm = () => {
           <input
             type="email"
             name="email"
+            placeholder="Enter your email"
             onChange={e => setEmail(e.target.value)}
           />
         </label>
@@ -40,6 +41,7 @@ export const LoginForm = () => {
           <input
             type="password"
             name="password"
+            placeholder="Password"
             onChange={e => setPassword(e.target.value)}
           />
         </label>

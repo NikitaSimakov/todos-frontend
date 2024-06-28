@@ -8,7 +8,6 @@ import Spinner from '../components/Spinner/Spinner';
 import { useAppDispatch } from '../redux/hooks';
 import { selectLoading } from '../redux/tasks/slice';
 import { Main } from '../components/Containers/Main';
-import { NotificationProvider } from '../components/NotificationProviderWithTimeout';
 
 export default function Tasks() {
   const dispatch = useAppDispatch();
@@ -20,12 +19,10 @@ export default function Tasks() {
 
   return (
     <Main>
-      <NotificationProvider>
-        <Helmet title="Your tasks" />
-        <Spinner isLoading={isLoading} />
-        <Sidebar />
-        <TaskList />
-      </NotificationProvider>
+      <Helmet title="Your tasks" />
+      <Spinner isLoading={isLoading} />
+      <Sidebar />
+      <TaskList />
     </Main>
   );
 }

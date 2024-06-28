@@ -12,7 +12,7 @@ export type TypeUserReq = {
   password: string;
 };
 
-export type Task = {
+export type TaskProps = {
   _id: string;
   title: string;
   description: string;
@@ -20,7 +20,7 @@ export type Task = {
 };
 
 export type TasksState = {
-  items: Task[];
+  items: TaskProps[];
   isLoading: boolean;
   error: string | null;
 };

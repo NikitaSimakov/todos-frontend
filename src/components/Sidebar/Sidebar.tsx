@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import { selectAllTasks } from '../../redux/tasks/slice';
-import { Task } from '../../@types/types';
+import { TaskProps } from '../../@types/types';
 import css from './Sidebar.module.scss';
 import { TaskAdd } from '../TaskAdd/TaskAdd';
 
 export const Sidebar = () => {
   const tasks = useSelector(selectAllTasks);
-  function getStatusCounts(tasks: Task[]) {
+  function getStatusCounts(tasks: TaskProps[]) {
     return tasks.reduce(
       (acc, task) => {
         if (task.status in acc) {
@@ -28,13 +28,13 @@ export const Sidebar = () => {
   return (
     <aside className={css.sidebar}>
       <h2>Task manager</h2>
-      <div className={css.infobox}>
-        <p>Total Tasks: {tasks.length}</p>
-        <p>Pending: {counts.pending}</p>
-        <p>In Progress: {counts.progress}</p>
-        <p>Done: {counts.done}</p>
+      <ul className={css.infobox}>
+        <li>Total Tasks: {tasks.length}</li>
+        <li>Pending: {counts.pending}</li>
+        <li>In Progress: {counts.progress}</li>
+        <li>Done: {counts.done}</li>
         <TaskAdd />
-      </div>
+      </ul>
     </aside>
   );
 };

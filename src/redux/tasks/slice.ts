@@ -7,7 +7,7 @@ import {
   updateStatusTask,
   updateTask,
 } from './operations';
-import { Task, TasksState } from '../../@types/types';
+import { TaskProps, TasksState } from '../../@types/types';
 
 const initialState: TasksState = {
   items: [],
@@ -60,7 +60,7 @@ const tasksSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const index = state.items.findIndex(
-          (task: Task) => task._id === action.payload
+          (task: TaskProps) => task._id === action.payload
         );
         state.items.splice(index, 1);
       })

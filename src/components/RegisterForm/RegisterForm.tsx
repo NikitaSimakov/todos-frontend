@@ -29,6 +29,7 @@ export const RegisterForm = () => {
           <input
             type="text"
             name="name"
+            placeholder="Enter your username"
             onChange={e => setName(e.target.value)}
           />
         </label>
@@ -37,6 +38,7 @@ export const RegisterForm = () => {
           <input
             type="email"
             name="email"
+            placeholder="Enter your email"
             onChange={e => setEmail(e.target.value)}
           />
         </label>
@@ -45,6 +47,7 @@ export const RegisterForm = () => {
           <input
             type="password"
             name="password"
+            placeholder="Password (min 6 characters)"
             onChange={e => setPassword(e.target.value)}
           />
         </label>

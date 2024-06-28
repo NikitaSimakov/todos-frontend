@@ -3,6 +3,8 @@
     flex-basis: 250px;
     padding-left: 20px;
     margin-bottom: 0;
+    height: 250px;
+    overflow-y: auto;
   }
   & > h2 {
     margin-bottom: 30px;
@@ -14,8 +16,14 @@
   justify-content: center;
   gap: 15px;
   align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
   @media screen and (min-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
+    height: 300px;
+    justify-content: flex-start;
   }
 }
