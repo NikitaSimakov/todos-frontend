@@ -1,28 +1,19 @@
 .title {
-  min-width: 80px;
-  max-width: 100px;
+  max-width: 90%;
 
   margin-top: 0;
   margin-bottom: 0;
-  @media screen and (min-width: 400px) {
-    min-width: 120px;
-    max-width: 150px;
-  }
 }
 
 .description {
-  max-width: 80px;
+  max-width: 90%;
   word-break: break-word;
 }
 
 .buttonsBoxOperation {
   display: flex;
-  flex-direction: column;
-  row-gap: 5px;
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    column-gap: 5px;
-  }
+  flex-direction: row;
+  column-gap: 25px;
 }
 
 .button {

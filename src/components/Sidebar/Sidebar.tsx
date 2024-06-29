@@ -28,12 +28,12 @@ export const Sidebar = () => {
   return (
     <aside className={css.sidebar}>
       <h2>Task manager</h2>
+      <TaskAdd />
       <ul className={css.infobox}>
         <li>Total Tasks: {tasks.length}</li>
         <li>Pending: {counts.pending}</li>
         <li>In Progress: {counts.progress}</li>
         <li>Done: {counts.done}</li>
-        <TaskAdd />
       </ul>
     </aside>
   );

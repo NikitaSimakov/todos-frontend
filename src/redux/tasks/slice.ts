@@ -79,6 +79,7 @@ const tasksSlice = createSlice({
         );
         state.items.splice(index, 1, action.payload);
       })
+      .addCase(updateTask.rejected, handleRejected)
       .addCase(updateStatusTask.pending, handlePending)
       .addCase(updateStatusTask.fulfilled, (state, action) => {
         state.isLoading = false;

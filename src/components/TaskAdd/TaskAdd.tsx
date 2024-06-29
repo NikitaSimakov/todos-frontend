@@ -1,58 +1,24 @@
 import { addTask } from '../../redux/tasks/operations';
-import { useState } from 'react';
 import Modal from '../Modal/Modal';
-import css from './TaskAdd.module.scss';
 import { useAppDispatch } from '../../redux/hooks';
-import { toast } from 'react-hot-toast';
+import TaskForm from '../TaskForm/TaskForm';
+import { TaskButton } from '../TaskButton/TaskButton';
+import { useModal } from '../../hooks/useModal';
 
 export const TaskAdd = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const { isModalOpen, open, close } = useModal();
   const dispatch = useAppDispatch();
 
-  const handleClose = () => {
-    setIsModalOpen(false);
-    setTitle('');
-    setDescription('');
-  };
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    if (title === '' || description === '') {
-      toast.error('Task or description cannot be empty. Enter some text!');
-      return;
-    }
+  const handleSubmit = (title: string, description: string) => {
     dispatch(addTask({ title, description, status: 'pending' }));
-    form.reset();
-    handleClose();
-    return;
   };
 
   return (
     <>
-      <button className={css.button} onClick={() => setIsModalOpen(true)}>
-        Add new task
-      </button>
+      <TaskButton name="Add new task" opener={open} />
       {isModalOpen && (
-        <Modal onClose={handleClose}>
-          <form className={css.form} onSubmit={handleSubmit}>
-            <input
-              name="text"
-              placeholder="Task title"
-              className={css.input}
-              onChange={e => setTitle(e.target.value)}
-            />
-            <input
-              name="text"
-              placeholder="Task description"
-              className={css.input}
-              onChange={e => setDescription(e.target.value)}
-            />
-            <button type="submit" className={css.submitButton}>
-              Add task
-            </button>
-          </form>
+        <Modal onClose={close}>
+          <TaskForm onSubmit={handleSubmit} onClose={close} />
         </Modal>
       )}
     </>

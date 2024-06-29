@@ -2,7 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { TaskProps, TaskRequest } from '../../@types/types';
-import { notify } from '../../hooks/useNotification';
 
 export const fetchTasks = createAsyncThunk<
   TaskProps[],
@@ -34,16 +33,14 @@ export const addTask = createAsyncThunk<
 
 export const deleteTask = createAsyncThunk<
   string,
-  string,
+  { taskId: string; addNotification: (message: string) => void },
   { rejectValue: string }
->('tasks/deleteTask', async (taskId, thunkAPI) => {
+>('tasks/deleteTask', async ({ taskId, addNotification }, thunkAPI) => {
   try {
     await axios.delete(`api/todos/${taskId}`);
-    notify('Successful task delete');
-    // toast.success('Successful task delete');
+    addNotification('Successful task delete');
     return taskId;
   } catch (e) {
-    toast.error('Fail task delete');
     return thunkAPI.rejectWithValue((e as Error).message);
   }
 });

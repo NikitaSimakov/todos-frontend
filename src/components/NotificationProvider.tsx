@@ -1,9 +1,5 @@
-import { ReactNode, useCallback, useEffect, useState } from 'react';
-import {
-  INotification,
-  NotificationContext,
-  setNotifyFunc,
-} from '../hooks/useNotification';
+import { ReactNode, useCallback, useState } from 'react';
+import { INotification, NotificationContext } from '../hooks/useNotification';
 
 interface NotificationProviderProps {
   children: ReactNode;
@@ -28,10 +24,6 @@ export const NotificationProvider = ({
     },
     [removeNotification]
   );
-
-  useEffect(() => {
-    setNotifyFunc(addNotification);
-  }, [addNotification]);
 
   return (
     <NotificationContext.Provider
