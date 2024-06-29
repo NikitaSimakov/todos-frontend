@@ -30,3 +30,9 @@ export type TaskRequest = {
   description: string;
   status: 'pending' | 'done' | 'progress';
 };
+
+export type TaskFormProps = {
+  onSubmit: (title: string, description: string) => void;
+  onClose: () => void;
+  initialValue?: { title: string; description: string };
+};

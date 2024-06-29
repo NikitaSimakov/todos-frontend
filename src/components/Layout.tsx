@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { Suspense } from 'react';
 import { AppBar } from './AppBar/AppBar';
-import { Footer } from './AppBar/Footer/Footer';
+import { Footer } from './Footer/Footer';
 
 export const Layout = () => {
   return (

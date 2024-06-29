@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import css from './TaskForm.module.scss';
-
-interface TaskFormProps {
-  onSubmit: (title: string, description: string) => void;
-  onClose: () => void;
-  initialValue?: { title: string; description: string };
-}
+import { TaskFormProps } from '../../@types/types';
 
 const TaskForm: React.FC<TaskFormProps> = ({
   onSubmit,

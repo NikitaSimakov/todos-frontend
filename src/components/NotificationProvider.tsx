@@ -1,5 +1,5 @@
 import { ReactNode, useCallback, useState } from 'react';
-import { INotification, NotificationContext } from '../hooks/useNotification';
+import { INotification, NotificationContext } from '../hooks';
 
 interface NotificationProviderProps {
   children: ReactNode;

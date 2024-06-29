@@ -4,7 +4,7 @@ import TaskIcons from '../TaskIcons/TaskIcons';
 import { TaskEditor } from '../TaskEditor/TaskEditor';
 import { useAppDispatch } from '../../redux/hooks';
 import { TaskProps } from '../../@types/types';
-import { useNotification } from '../../hooks/useNotification';
+import { useNotification } from '../../hooks';
 
 export const Task = (task: TaskProps) => {
   const { _id, title, status, description } = task;

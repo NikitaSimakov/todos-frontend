@@ -4,7 +4,7 @@ import { useAppDispatch } from '../../redux/hooks';
 import TaskForm from '../TaskForm/TaskForm';
 import { TaskProps } from '../../@types/types';
 import { TaskButton } from '../TaskButton/TaskButton';
-import { useModal } from '../../hooks/useModal';
+import { useModal } from '../../hooks';
 
 export const TaskEditor = ({ title, description, _id }: TaskProps) => {
   const { isModalOpen, open, close } = useModal();

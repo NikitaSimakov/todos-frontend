@@ -3,7 +3,7 @@ import Modal from '../Modal/Modal';
 import { useAppDispatch } from '../../redux/hooks';
 import TaskForm from '../TaskForm/TaskForm';
 import { TaskButton } from '../TaskButton/TaskButton';
-import { useModal } from '../../hooks/useModal';
+import { useModal } from '../../hooks';
 
 export const TaskAdd = () => {
   const { isModalOpen, open, close } = useModal();

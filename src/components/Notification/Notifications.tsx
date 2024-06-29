@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useNotification } from '../../hooks/useNotification';
+import { useNotification } from '../../hooks';
 import css from './Notification.module.scss';
 
 const Notifications: FC = () => {
