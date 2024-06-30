@@ -5,7 +5,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from '../redux/auth/operations';
 import { useAuth } from '../hooks';
-import Spinner from './Spinner/Spinner';
+import { Spinner } from './';
 import { useAppDispatch } from '../redux/hooks';
 
 const HomePage = lazy(() => import('../pages/Home'));

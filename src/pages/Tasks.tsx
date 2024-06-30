@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSelector } from 'react-redux';
-import { Sidebar } from '../components/Sidebar/Sidebar';
-import { TaskList } from '../components/TaskList/TaskList';
+import { Sidebar, TaskList, Spinner } from '../components';
 import { fetchTasks } from '../redux/tasks/operations';
-import Spinner from '../components/Spinner/Spinner';
 import { useAppDispatch } from '../redux/hooks';
 import { selectLoading } from '../redux/tasks/slice';
-import { Main } from '../components/Containers/Main';
+import { Main } from '../components';
 
 export default function Tasks() {
   const dispatch = useAppDispatch();

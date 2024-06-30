@@ -4,7 +4,7 @@ import { logIn } from '../../redux/auth/operations';
 import { AppDispatch } from '../../redux/store';
 import css from './LoginForm.module.scss';
 import { isLoading } from '../../redux/auth/slice';
-import Spinner from '../Spinner/Spinner';
+import { Spinner } from '../';
 
 export const LoginForm = () => {
   const dispatch = useDispatch<AppDispatch>();

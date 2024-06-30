@@ -1,9 +1,8 @@
 import { updateTask } from '../../redux/tasks/operations';
-import Modal from '../Modal/Modal';
+import { Modal } from '../Modal/Modal';
 import { useAppDispatch } from '../../redux/hooks';
-import TaskForm from '../TaskForm/TaskForm';
-import { TaskProps } from '../../@types/types';
-import { TaskButton } from '../TaskButton/TaskButton';
+import { TaskProps } from '../../@types';
+import { TaskButton, TaskForm } from '../';
 import { useModal } from '../../hooks';
 
 export const TaskEditor = ({ title, description, _id }: TaskProps) => {

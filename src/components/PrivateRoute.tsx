@@ -3,14 +3,15 @@ import { useAuth } from '../hooks';
 
 type Props = {
   component: JSX.Element;
-  redirectTo: string;
+  redirectTo?: string;
 };
+
 export const PrivateRoute = ({
-  component: Component,
+  component,
   redirectTo = '/',
-}: Props) => {
+}: Props): JSX.Element => {
   const { isLoggedIn, isRefreshing } = useAuth();
   const shouldRedirect = !isLoggedIn && !isRefreshing;
 
-  return shouldRedirect ? <Navigate to={redirectTo} /> : Component;
+  return shouldRedirect ? <Navigate to={redirectTo} /> : component;
 };

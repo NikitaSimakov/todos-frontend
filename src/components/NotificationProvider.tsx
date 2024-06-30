@@ -1,14 +1,13 @@
 import { ReactNode, useCallback, useState } from 'react';
-import { INotification, NotificationContext } from '../hooks';
-
-interface NotificationProviderProps {
-  children: ReactNode;
-}
+import { NotificationContext } from '../hooks';
+import { NotificationType } from '../@types';
 
 export const NotificationProvider = ({
   children,
-}: NotificationProviderProps): JSX.Element => {
-  const [notifications, setNotifications] = useState<INotification[]>([]);
+}: {
+  children: ReactNode;
+}): JSX.Element => {
+  const [notifications, setNotifications] = useState<NotificationType[]>([]);
 
   const removeNotification = useCallback((id: number) => {
     setNotifications(notifications =>

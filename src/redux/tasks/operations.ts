@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import { TaskProps, TaskRequest } from '../../@types/types';
+import { TaskProps, TaskRequest } from '../../@types';
 
 export const fetchTasks = createAsyncThunk<
   TaskProps[],

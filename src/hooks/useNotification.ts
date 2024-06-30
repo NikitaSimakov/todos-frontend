@@ -1,15 +1,5 @@
 import { createContext, useContext } from 'react';
-
-export interface INotification {
-  id: number;
-  message: string;
-}
-
-interface NotificationContextType {
-  notifications: INotification[];
-  addNotification: (message: string) => void;
-  removeNotification: (id: number) => void;
-}
+import { NotificationContextType } from '../@types';
 
 export const NotificationContext = createContext<
   NotificationContextType | undefined

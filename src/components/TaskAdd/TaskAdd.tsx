@@ -1,8 +1,7 @@
 import { addTask } from '../../redux/tasks/operations';
-import Modal from '../Modal/Modal';
+import { Modal } from '../';
 import { useAppDispatch } from '../../redux/hooks';
-import TaskForm from '../TaskForm/TaskForm';
-import { TaskButton } from '../TaskButton/TaskButton';
+import { TaskForm, TaskButton } from '../';
 import { useModal } from '../../hooks';
 
 export const TaskAdd = () => {

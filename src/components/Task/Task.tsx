@@ -1,10 +1,9 @@
 import { deleteTask } from '../../redux/tasks/operations';
-import css from './Task.module.scss';
-import TaskIcons from '../TaskIcons/TaskIcons';
-import { TaskEditor } from '../TaskEditor/TaskEditor';
+import { TaskEditor, TaskIcons } from '../';
 import { useAppDispatch } from '../../redux/hooks';
-import { TaskProps } from '../../@types/types';
+import { TaskProps } from '../../@types';
 import { useNotification } from '../../hooks';
+import css from './Task.module.scss';
 
 export const Task = (task: TaskProps) => {
   const { _id, title, status, description } = task;

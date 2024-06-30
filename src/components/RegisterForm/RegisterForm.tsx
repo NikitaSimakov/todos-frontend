@@ -3,7 +3,7 @@ import { register } from '../../redux/auth/operations';
 import css from './RegisterForm.module.scss';
 import { useState } from 'react';
 import { isLoading } from '../../redux/auth/slice';
-import Spinner from '../Spinner/Spinner';
+import { Spinner } from '../';
 import { useAppDispatch } from '../../redux/hooks';
 
 export const RegisterForm = () => {

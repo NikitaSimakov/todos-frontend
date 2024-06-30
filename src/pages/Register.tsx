@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { RegisterForm } from '../components/RegisterForm/RegisterForm';
+import { RegisterForm } from '../components';
 import '../index.scss';
 
 export default function Register() {

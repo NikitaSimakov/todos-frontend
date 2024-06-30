@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { selectAllTasks } from '../../redux/tasks/slice';
-import { TaskProps } from '../../@types/types';
+import { TaskProps } from '../../@types';
+import { TaskAdd } from '../';
 import css from './Sidebar.module.scss';
-import { TaskAdd } from '../TaskAdd/TaskAdd';
 
 export const Sidebar = () => {
   const tasks = useSelector(selectAllTasks);

@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { logOut } from '../../redux/auth/operations';
 import { useAuth } from '../../hooks';
-import css from './UserMenu.module.scss';
-import Spinner from '../Spinner/Spinner';
+import { Spinner } from '../';
 import { isLoading } from '../../redux/auth/slice';
 import { useAppDispatch } from '../../redux/hooks';
+import css from './UserMenu.module.scss';
 
 export const UserMenu = () => {
   const loading = useSelector(isLoading);

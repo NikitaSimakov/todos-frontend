@@ -10,7 +10,7 @@ interface IModalProps {
 
 const modalRoot = document.getElementById('modal-root') as HTMLElement;
 
-const Modal: FC<IModalProps> = ({ children, onClose }) => {
+export const Modal: FC<IModalProps> = ({ children, onClose }) => {
   useEffect(() => {
     const esc = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose();
@@ -27,7 +27,7 @@ const Modal: FC<IModalProps> = ({ children, onClose }) => {
     if (event.target === event.currentTarget) onClose();
   };
 
-  const Modal = (
+  const modalContent = (
     <div onClick={onEscTapHandler} className={css.overlay}>
       <section className={css.modal}>
         <button onClick={onClose} className={css.closeButton} type="button">
@@ -37,7 +37,5 @@ const Modal: FC<IModalProps> = ({ children, onClose }) => {
       </section>
     </div>
   );
-  return createPortal(Modal, modalRoot);
+  return createPortal(modalContent, modalRoot);
 };
-
-export default Modal;

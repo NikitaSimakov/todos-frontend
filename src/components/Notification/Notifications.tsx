@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useNotification } from '../../hooks';
 import css from './Notification.module.scss';
 
-const Notifications: FC = () => {
+export const Notifications: FC = () => {
   const { notifications, removeNotification } = useNotification();
 
   return (
@@ -19,5 +19,3 @@ const Notifications: FC = () => {
     </div>
   );
 };
-
-export default Notifications;

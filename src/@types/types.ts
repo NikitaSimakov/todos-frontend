@@ -36,3 +36,24 @@ export type TaskFormProps = {
   onClose: () => void;
   initialValue?: { title: string; description: string };
 };
+
+export type TaskButtonProps = {
+  name: string;
+  opener: (value: React.SetStateAction<boolean>) => void;
+};
+
+export type TaskIconsProps = {
+  status: string;
+  id: string;
+};
+
+export type NotificationType = {
+  id: number;
+  message: string;
+};
+
+export type NotificationContextType = {
+  notifications: NotificationType[];
+  addNotification: (message: string) => void;
+  removeNotification: (id: number) => void;
+};

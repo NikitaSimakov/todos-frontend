@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-hot-toast';
 import { RootState } from '../store';
-import { TypeUserReq, TypeUserResp } from '../../@types/types';
+import { TypeUserReq, TypeUserResp } from '../../@types';
 
 axios.defaults.baseURL = 'https://todos-backend-pqko.onrender.com/';
 

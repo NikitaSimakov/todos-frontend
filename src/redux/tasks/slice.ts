@@ -7,7 +7,7 @@ import {
   updateStatusTask,
   updateTask,
 } from './operations';
-import { TaskProps, TasksState } from '../../@types/types';
+import { TaskProps, TasksState } from '../../@types';
 
 const initialState: TasksState = {
   items: [],

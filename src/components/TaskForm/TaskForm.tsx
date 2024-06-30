@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import css from './TaskForm.module.scss';
-import { TaskFormProps } from '../../@types/types';
+import { TaskFormProps } from '../../@types';
 
-const TaskForm: React.FC<TaskFormProps> = ({
+export const TaskForm: React.FC<TaskFormProps> = ({
   onSubmit,
   onClose,
   initialValue,
@@ -47,5 +47,3 @@ const TaskForm: React.FC<TaskFormProps> = ({
     </form>
   );
 };
-
-export default TaskForm;

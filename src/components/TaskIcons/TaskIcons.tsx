@@ -6,11 +6,7 @@ import {
 import { updateStatusTask } from '../../redux/tasks/operations';
 import { useAppDispatch } from '../../redux/hooks';
 import css from './TaskIcons.module.scss';
-
-type Props = {
-  status: string;
-  id: string;
-};
+import { TaskIconsProps } from '../../@types';
 
 const icons = [
   { iconId: 1, buttonStatus: 'pending', icon: <TbDeviceTabletPause /> },
@@ -18,7 +14,7 @@ const icons = [
   { iconId: 3, buttonStatus: 'done', icon: <TbDeviceTabletCheck /> },
 ];
 
-const TaskIcons = ({ status, id }: Props) => {
+export const TaskIcons = ({ status, id }: TaskIconsProps) => {
   const dispatch = useAppDispatch();
   const markup = icons.map(({ buttonStatus, icon, iconId }) => (
     <button
@@ -35,5 +31,3 @@ const TaskIcons = ({ status, id }: Props) => {
   ));
   return <div className={css.buttonBox}>{markup}</div>;
 };
-
-export default TaskIcons;

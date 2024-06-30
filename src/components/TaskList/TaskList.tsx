@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
-import { Task } from '../Task/Task';
+import { Task } from '../';
 import { selectAllTasks, selectLoading } from '../../redux/tasks/slice';
 import css from './TaskList.module.scss';
+
 export const TaskList = () => {
   const tasks = useSelector(selectAllTasks);
   const loading = useSelector(selectLoading);

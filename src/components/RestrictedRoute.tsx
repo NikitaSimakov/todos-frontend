@@ -3,13 +3,14 @@ import { useAuth } from '../hooks';
 
 type Props = {
   component: JSX.Element;
-  redirectTo: string;
+  redirectTo?: string;
 };
+
 export const RestrictedRoute = ({
-  component: Component,
+  component,
   redirectTo = '/',
-}: Props) => {
+}: Props): JSX.Element => {
   const { isLoggedIn } = useAuth();
 
-  return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
+  return isLoggedIn ? <Navigate to={redirectTo} /> : component;
 };
