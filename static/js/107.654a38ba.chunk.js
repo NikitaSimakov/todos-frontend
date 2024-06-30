@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktodos_frontend=self.webpackChunktodos_frontend||[]).push([[107],{107:(e,s,t)=>{t.r(s),t.d(s,{default:()=>o});var n=t(50),a=t(37),d=(t(277),t(184));function o(){return(0,d.jsxs)("div",{className:"authPage",children:[(0,d.jsx)(n.ql,{title:"Login"}),(0,d.jsx)(a.U0,{})]})}}}]);
+//# sourceMappingURL=107.654a38ba.chunk.js.map
